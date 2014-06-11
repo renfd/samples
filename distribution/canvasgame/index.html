@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    <!--do not remove these meta tags-->
+    <meta http-equiv="X-UA-Compatible" content="IE=IE9" >
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <!--You can replace the <viewporter> section with yours-->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
+
+    <!-- TGL:KEEP -->
+        <!--Put any additional head element contents you need in between these lines-->
+    <!-- TGL:KEEP:END -->
+
+    <!--Do not remove this line-->
+    <script src="js/lib/tgl/tgl.boot.min.js"></script>
+</head>
+<body onload="initGame(context)">
+
+<!--Any contents placed in the body element will not be stripped -->
+<canvas
+        id="mycanvas"
+        style="background:#467cff;"
+        width="640"
+        height="832">
+</canvas>
+
+
+<script>
+    var context;
+    canvas = document.getElementById('mycanvas');
+    if (canvas.getContext){
+        context = canvas.getContext('2d');
+    }
+</script>
+
+
+
+</body>
+</html>
