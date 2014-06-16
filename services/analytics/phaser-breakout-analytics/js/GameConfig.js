@@ -36,12 +36,6 @@ var GameConfig = {
         VERSION: '0.3'
     },
 
-    TGE: {
-        ENABLED: false,
-        FONT_LOADER: false,
-        VERSION: '1.0'
-    },
-
     GoogleAnalytics: {
         QA_ID:     'UA-38962864-2',     // Provide a Google Analytics Account ID if analytics features used during game development
         PROD_ID:   'UA-38962864-2',         // Provide a Google Analytics Account ID to be used once the game is provided to TreSensa for distribution
