@@ -7,7 +7,7 @@ var GameConfig = {
                     // INFO = 3
                     // VERBOSE = 4
 
-    GAME_ID: 'com.tresensa.test-game',	//game ID not require until distribution or usage of game services
+    GAME_ID: '',    // game ID not require until distribution or usage of game services
     TITLE: 'TreSensa Starter Template',
     VERSION: '1.0.0',
 
@@ -17,18 +17,19 @@ var GameConfig = {
 
     SOURCE: [
         "js/lib/phaser.js",
-	    "js/breakout.js"
+    "js/breakout.js"
     ],
 
     CSS: [
     ],
 
     EXCLUDE: [
+        "assets/brickgameassets.zip"
     ],
 
-	TGL: {
-		VERSION: '1.0'
-	},
+    TGL: {
+        VERSION: '1.0'
+    },
 
     TGS: {
         ENABLED: true,
@@ -42,8 +43,8 @@ var GameConfig = {
     },
 
     GoogleAnalytics: {
-        QA_ID:     'UA-38962864-2',		// Provide a Google Analytics Account ID if analytics features used during game development
-        PROD_ID:   '',      			// Provide a Google Analytics Account ID to be used once the game is provided to TreSensa for distribution
+        QA_ID:     'UA-38962864-2',     // Provide a Google Analytics Account ID if analytics features used during game development
+        PROD_ID:   'UA-38962864-2',         // Provide a Google Analytics Account ID to be used once the game is provided to TreSensa for distribution
         LABEL: 'tresensa-phaser-analytics-example'
     }
 };
