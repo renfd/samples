@@ -1,0 +1,73 @@
+/* 
+   Lets give the widget a 
+    - color background
+    - padding
+    - round borders
+*/
+
+#tgs-widget
+{
+  background:#444;
+  padding:5px;
+  -webkit-border-radius:5px;border-radius:5px;
+}
+
+/* 
+    Now Lets style the Ad by putting a border around it 
+*/
+
+#tgs_display_ad
+{
+  border:1px solid #000; 
+}
+/* 
+  All buttons in the widget have 'tgs-btn' CSS class which you can target. 
+  Here we round out all the buttons' corners and force each button to to take up 100% width of the widget
+*/
+
+/* iframe */
+#tgs_display_ad_iframe
+{
+  width:100%;
+  height:270px;
+}
+
+#tgs-widget .tgs-btn
+{
+  border-radius:5px;
+  text-transform:uppercase;
+  /* We need to use !important when overriding inline styles(styles that the widget has in its html by default)*/
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 
+  You can also target each button separetely
+*/
+
+#tgs-widget .tgs-btn.twitter
+{
+  background:#00adf9;
+}
+
+#tgs-widget .tgs-btn.fb
+{
+  background:#147edf;
+}
+
+#tgs-widget .tgs-btn.moregames
+{
+  background:#ed2a7b;
+}
+
+/* 
+   When styling the widget, we reccomend you make it 
+   look like it seamlessly integrates into your game. 
+   You can also set hover states for the buttons and 
+   anything else that you might want to do to make the 
+   widget look more emmersive.
+*/
+
+/* 
+Make sure that the phser game div shrink wraps to its canvas element 
+*/
+#phaser-example { display:inline-block; }

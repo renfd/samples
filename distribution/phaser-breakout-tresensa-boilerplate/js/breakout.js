@@ -25,20 +25,10 @@ var levelText;
 
 var s;
 
-// Keep track of the levels
-var currentLevel = 1; 
-
-// Num of times the ball has been released during a game (until gameover, when it gets reset)
-var numTimesBallReleasedInGame = 0; 
-
-// Num of times the player hit the ball with paddle during a given level. 
-var numTimesBallReleasedInLevel = 0;
-
-// Used to check when its the first time the player is playing
-var timesPlayed = 0; 
-
-
 function create() {
+
+    // Initialize the TreSensa plugin. This can be used to instantiate the TGS Widget
+    game.Tresensa = game.plugins.add(Phaser.Plugin.TreSensaPlugin);
 
     game.physics.startSystem(Phaser.Physics.ARCADE);
 
@@ -96,16 +86,15 @@ function create() {
     introText = game.add.text(game.world.centerX, 400, '- click to start -', { font: "40px Arial", fill: "#ffffff", align: "center" });
     introText.anchor.setTo(0.5, 0.5);
 
-    // Create text to keep track of the levels
+    // Text to keep track of the levels
     levelText = game.add.text(32, 550, 'level: 1', { font: "20px Arial", fill: "#ffffff", align: "left" });
     
     // Release the ball off the paddle on mousedown
     game.input.onDown.add(releaseBall, this);
 
-    // Create replay button and set it to invisible
+     // Create replay button and set it to invisible
     replayBtn = game.add.button(30, game.world.height / 1.35, 'replayBtn', resetGame, this);
     replayBtn.visible = false;
-
 
 }
 
@@ -137,15 +126,6 @@ function update () {
 
 function releaseBall () {
     
-    // TRESENSA - log level start and game start
-    logGameBegin();
-    logLevelStart();
-    
-    // increment these vars for analytics purposes
-    // We make sure to increment AFTER the Tresensa logging events 
-    // because they depend on these vars
-    numTimesBallReleasedInLevel++;
-    numTimesBallReleasedInGame++;
 
     if (ballOnPaddle)
     {
@@ -159,9 +139,6 @@ function releaseBall () {
 }
 
 function ballLost () {
-
-    //Update google analytics with ballLost event
-    logBallLost();
 
     // Update the lives
     lives--;
@@ -189,16 +166,9 @@ function gameOver () {
     introText.text = 'Game Over!';
     introText.visible = true;
 
-    // TRESENSA - log num times the ball was released, level failed and game end
-    logNumTimesBallReleased();
-    logLevelFail(); 
-    logGameEnd();
-
      // Go back to level 1
     levelText.text = "level: 1";
     currentLevel = 1;
-    numTimesBallReleasedInLevel = 0;
-    numTimesBallReleasedInGame = 0;
 
     // Make replay visible when game over occurs
     replayBtn.visible = true;
@@ -248,10 +218,6 @@ function ballHitBrick (_ball, _brick) {
         //  New level starts
         score += 1000;
         scoreText.text = 'score: ' + score;
-        
-        // TRESENSA - Log num times the ball was released and level complete!
-        logNumTimesBallReleased(); 
-        logLevelComplete();
 
         // Move to the next level
         currentLevel++;
@@ -259,7 +225,6 @@ function ballHitBrick (_ball, _brick) {
         
         introText.visible = true;
         introText.text = '- Level ' + currentLevel + '-';
-        numTimesBallReleasedInLevel = 0;
 
         //  Let's move the ball back to the paddle
         ballOnPaddle = true;
@@ -299,87 +264,3 @@ function ballHitPaddle (_ball, _paddle) {
 
 }
 
-/*---------------------------------------------\             
-|         TRESENSA ANALYTICS FUNCTIONS         | 
-\---------------------------------------------*/
-
-/*
-    logLevelStart()
-    The numTimesBallReleasedInLevel var starts out as 0 when you begin a level
-    and increments as the level goes on. Once the player finishes or fails a level,
-    numTimesBallReleasedInLevel goes back to 0. Therefore we can use it to check whether
-    a player has started a level by seeing if its equal to 0 and if it is, we log our 'start' event.
-*/
-function logLevelStart () 
-{
-    console.log('number of times ball released: ' + numTimesBallReleasedInLevel);
-    // If player is not starting a new level, exit out.
-    if (numTimesBallReleasedInLevel != 0) return; 
-   
-    TGS.Analytics.logLevelEvent('start', currentLevel);
-    console.log('Level '+ currentLevel + ' Started!');
-}
-
-/*
-    logLevelComplete()
-    If the player completed the level, log the 'complete' event
-*/
-function logLevelComplete ()
-{
-     TGS.Analytics.logLevelEvent('complete', currentLevel);
-     console.log('Level '+ currentLevel + ' Completed!');
-}
-
-/*
-    logLevelFail()
-    If the player failed the level, log the 'fail' event
-*/
-function logLevelFail ()
-{
-     TGS.Analytics.logLevelEvent('fail', currentLevel);
-     console.log('Level '+ currentLevel + ' Failed!');
-}
-
-/*
-    logGameStart()
-    Log an event when player first starts the game
-    numTimesBallReleasedInGame works similar to numTimesballReleasedInLevel 
-    (used in the logLevelStart() function above) except that it does not get reset everytime the player completes a level. 
-*/
-function logGameBegin ()
-{
-    // If player is not starting the game, exit.
-    if (numTimesBallReleasedInGame != 0) return;
-    
-    TGS.Analytics.logGameEvent('begin');
-    console.log('Game Started!');
-}
-
-/*
-    logGameEnd()
-    Log the custom event everytime the the player experiences game over
-*/
-function logGameEnd ()
-{
-    TGS.Analytics.logGameEvent('end');
-    console.log('GameOver!');
-}
-
-/*
-    logBallLost()
-    Log the custom event: 'ballLost' everytime the ball falls below the screen
-*/
-function logBallLost ()
-{
-    TGS.Analytics.logCustomEvent('ballLost');
-    console.log('Ball Lost!');
-}
-
-/*
-    logTimesBallReleased()
-    Log the amount of times ball was released/hit by the paddle in a given level
-*/
-function logNumTimesBallReleased ()
-{
-    TGS.Analytics.logCustomEvent('numTimesBallReleased', numTimesBallReleasedInLevel);
-}
