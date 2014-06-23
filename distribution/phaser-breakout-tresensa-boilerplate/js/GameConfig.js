@@ -8,7 +8,7 @@ var GameConfig = {
                     // VERBOSE = 4
 
     GAME_ID: '',    // game ID not require until distribution or usage of game services
-    TITLE: 'TreSensa Starter Template',
+    TITLE: 'TreSensa Phaser Example',
     VERSION: '1.0.0',
 
     ORIENTATION: 'landscape',   // portrait|landscape
@@ -17,11 +17,15 @@ var GameConfig = {
 
     SOURCE: [
         "js/lib/phaser.js",
-        "http://sdk.tresensa.com/plugins/phaser/tgshelper.min.js", // Get the Phaser Tresensa plugin
+        "http://sdk.tresensa.com/plugins/phaser/tgshelper.min.js",
         "js/breakout.js"
     ],
 
     CSS: [
+    ],
+
+    EXCLUDE: [
+        
     ],
 
     TGL: {
@@ -36,6 +40,6 @@ var GameConfig = {
     GoogleAnalytics: {
         QA_ID:     'UA-38962864-2',     // Provide a Google Analytics Account ID if analytics features used during game development
         PROD_ID:   'UA-38962864-2',         // Provide a Google Analytics Account ID to be used once the game is provided to TreSensa for distribution
-        LABEL: 'tresensa-phaser-analytics-example'
+        LABEL: 'tresensa-phaser-example'
     }
 };
