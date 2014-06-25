@@ -1,0 +1,10 @@
+#tgs-widget .tgs-btn {
+	background-color: #D9C6B0;
+	color: #A63232;
+	font-family: "Tahoma";
+	font-weight: bold;
+}
+
+#tgs-widget .tgs-btn:hover {
+	background-color: #FBE8D2;
+}
