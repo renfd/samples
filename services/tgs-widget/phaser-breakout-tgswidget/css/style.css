@@ -1,3 +1,15 @@
+body 
+{ 
+  margin:0;
+  background:#000; 
+}
+
+/* Make sure that the phser game div shrink wraps to its canvas element */
+#phaser-example 
+{ 
+  width:100%;
+  display:inline-block;  
+}
 /* 
    Lets give the widget a 
     - color background
@@ -70,4 +82,4 @@
 /* 
 Make sure that the phser game div shrink wraps to its canvas element 
 */
-#phaser-example { display:inline-block; }
+

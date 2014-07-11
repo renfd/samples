@@ -1,0 +1,108 @@
+{"frames": [
+
+{
+	"filename": "ball-0.png",
+	"frame": {"x":2,"y":2,"w":36,"h":36},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":36,"h":36},
+	"sourceSize": {"w":36,"h":36}
+},
+{
+	"filename": "ball-1.png",
+	"frame": {"x":40,"y":2,"w":36,"h":36},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":36,"h":36},
+	"sourceSize": {"w":36,"h":36}
+},
+{
+	"filename": "ball-2.png",
+	"frame": {"x":78,"y":2,"w":37,"h":36},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":37,"h":36},
+	"sourceSize": {"w":37,"h":36}
+},
+{
+	"filename": "ball-3.png",
+	"frame": {"x":117,"y":2,"w":37,"h":36},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":37,"h":36},
+	"sourceSize": {"w":37,"h":36}
+},
+{
+	"filename": "ball-4.png",
+	"frame": {"x":156,"y":2,"w":36,"h":36},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":36,"h":36},
+	"sourceSize": {"w":36,"h":36}
+},
+{
+	"filename": "ball-5.png",
+	"frame": {"x":194,"y":2,"w":36,"h":36},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":36,"h":36},
+	"sourceSize": {"w":36,"h":36}
+},
+{
+	"filename": "ball-6.png",
+	"frame": {"x":232,"y":2,"w":36,"h":36},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":36,"h":36},
+	"sourceSize": {"w":36,"h":36}
+},
+{
+	"filename": "brick-1.png",
+	"frame": {"x":270,"y":2,"w":77,"h":36},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":77,"h":36},
+	"sourceSize": {"w":77,"h":36}
+},
+{
+	"filename": "brick-2.png",
+	"frame": {"x":349,"y":2,"w":77,"h":36},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":77,"h":36},
+	"sourceSize": {"w":77,"h":36}
+},
+{
+	"filename": "brick-3.png",
+	"frame": {"x":428,"y":2,"w":78,"h":36},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":78,"h":36},
+	"sourceSize": {"w":78,"h":36}
+},
+{
+	"filename": "brick-4.png",
+	"frame": {"x":508,"y":2,"w":78,"h":36},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":78,"h":36},
+	"sourceSize": {"w":78,"h":36}
+},
+{
+	"filename": "platform.png",
+	"frame": {"x":588,"y":2,"w":200,"h":36},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":36},
+	"sourceSize": {"w":200,"h":36}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker ",
+	"version": "1.0",
+	"image": "breakout-sprites.png",
+	"format": "RGBA8888",
+	"size": {"w":790,"h":40},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:35a860e69790c1e7d829ba48755b08b1:7ed4d98a877c67fee3847b1cca6e0ac4:17a90e5b63d800b45b5976b268f02211$"
+}
+}

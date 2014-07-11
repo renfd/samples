@@ -8,7 +8,7 @@ var GameConfig = {
                     // VERBOSE = 4
 
     GAME_ID: 'com.tresensa.test-game',	//game ID not required until distribution or usage of game services
-    TITLE: 'TreSensa TGS Widget Phaser Example',
+    TITLE: 'TreSensa Starter Template',
     VERSION: '1.0.0',
 
     ORIENTATION: 'landscape',   // portrait|landscape
@@ -41,6 +41,6 @@ var GameConfig = {
     GoogleAnalytics: {
         QA_ID:     'UA-38962864-2',         // Provide a Google Analytics Account ID if analytics features used during game development
         PROD_ID:   'UA-38962864-2',         // Provide a Google Analytics Account ID to be used once the game is provided to TreSensa for distribution
-        LABEL: 'TreSensa-tgs-widget-phaser-example'
+        LABEL: 'tresensa-phaser-widget-example'
     }
 };

@@ -22,6 +22,7 @@ var GameConfig = {
     ],
 
     CSS: [
+        "css/style.css"
     ],
 
     EXCLUDE: [
