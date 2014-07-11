@@ -77,7 +77,6 @@ function create() {
      // Let's make the paddle a bit bigger 
     paddle.scale.set(1.5, 1.5);
 
-
     // Allow horizontal dragging in mobile 
     if (!game.device.desktop)
     {
@@ -86,7 +85,6 @@ function create() {
         paddle.input.allowVerticalDrag = false;
     }
     
-
     ball = game.add.sprite(game.world.centerX, paddle.y - 33, 'sprites', 'ball-0.png');
     ball.anchor.set(0.5);
     ball.checkWorldBounds = true;

@@ -35,6 +35,9 @@ function create() {
     initMobileScaling();
 
     // We check bounds collisions against all walls other than the bottom one
+    game.physics.startSystem(Phaser.Physics.ARCADE);
+
+    // We check bounds collisions against all walls other than the bottom one
     game.physics.arcade.checkCollision.down = false;
 
     s = game.add.tileSprite(0, 0, 1024, 768, 'starfield');
