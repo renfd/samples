@@ -5,7 +5,7 @@ This Repo holds game examples which illustrate Tresensa's game services and dist
 ## List of Games
 
 ###canvasgame
-*distribution/canvasgame*
+*<p>distribution/canvasgame</p>*
 A very basic game example with the Tresensa platform integrated, not using any game engine.
 
 ### phaser-breakout-tresensa-example
