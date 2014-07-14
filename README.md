@@ -41,5 +41,8 @@ A game made with TGE, tresensa's game engine. This game makes use of various Tre
 *<p>Tresensa Game Engine Samples/RoboRunner_1.0.0</p>*
 A bare bones runner game to use as an example for how to organize a TGE game
 
+### construct2-spaceblast-tgswidget
+*<p>services/tgs-widget/construct2-spaceblast-tgswidget</p>*
+This is a construct2 project which uses Tresensa's Construct2 plugin to integrate the TGS Widget. 
 
 
