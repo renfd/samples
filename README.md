@@ -14,11 +14,11 @@ A Phaser game example with the Tresensa platform integrated. This game also incl
 
 ### canvas-analytics
 *<p>services/analytics/canvas-analytics</p>*
-A very basic game example showing how you can use analytics in your game, no gam engine used.
+A very basic game example showing how you can use analytics in your game, no game engine used.
 
 ### phaser-breakout-analytics
 *<p>services/analytics/phaser-breakout-analytics</p>*
-A Phaser game showing how you can use analytics to log various events in your game. 
+A Phaser game showing how you can use TGS Analytics to log various events in your game. 
 
 ### phaser-breakout-tgswidget
 *<p>services/tgs-widget/phaser-breakout-tgswidget</p>*
@@ -36,6 +36,10 @@ A game made with TGE, tresensa's game engine. This game makes use of various Tre
 * TGS Widget
 * Analytics
 * Leaderboard
+
+### RoboRunner_1.0.0
+*<p>Tresensa Game Engine Samples/RoboRunner_1.0.0</p>*
+A bare bones runner game to use as an example for how to organize a TGE game
 
 
 
