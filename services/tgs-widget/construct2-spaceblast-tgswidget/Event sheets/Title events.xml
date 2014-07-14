@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Title events</name>
+    <events>
+        <comment>Start playing some music.</comment>
+        <event-block sid="8826079468250996">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="6695950563649421" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="2898949690646655" type="Audio">
+                    <param id="0" name="Audio file">EpicArpg</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;music&quot;</param>
+                </action>
+                <action id="1" name="Set looping" sid="5794831623922991" type="Audio">
+                    <param id="0" name="Tag">&quot;music&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+                <action id="4" name="Preload" sid="3808037582052893" type="Audio">
+                    <param id="0" name="Audio file">SquareMotif1</param>
+                </action>
+                <action id="4" name="Preload" sid="226914048831021" type="Audio">
+                    <param id="0" name="Audio file">Lazer Fire 1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Flash the &apos;Press space to begin&apos; text.</comment>
+        <event-block sid="3984713732608464">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="6882901352929655" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="4788976007094155" type="BeginText">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="3493877608033421" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="-15" name="Set visible" sid="5156589668756335" type="BeginText">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Go to the game layout when pressing spacebar.</comment>
+        <event-block sid="7074783769335661">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="1943681558685337" type="Keyboard">
+                    <param id="0" name="Key">32 (Space)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="6" name="Stop" sid="9347374016585357" type="Audio">
+                    <param id="0" name="Tag">&quot;music&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="4345908236401166" type="System">
+                    <param id="0" name="Layout">Game</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
