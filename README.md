@@ -24,6 +24,10 @@ A Phaser game showing how you can use TGS Analytics to log various events in you
 *<p>services/tgs-widget/phaser-breakout-tgswidget</p>*
 This Phaser game that shows you how you can use the TGS Widget in your game.
 
+### phaser-breakout-leaderboard
+*<p>services/leaderboard/phaser-breakout-leaderboard</p>*
+A Phaser game showing how you can implement TGS Leaderboard 
+
 ### starter_template
 *<p>TreSensa Game Engine Samples/starter_template</p>*
 A very basic game example showing how to use Tresensa's Game Engine (TGE)
