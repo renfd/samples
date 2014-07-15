@@ -1,0 +1,89 @@
+.landscape {
+  background-color: black;
+}
+
+
+
+
+
+/* selectors = drop down menus */
+/* button = back button */
+/* rank-list =   */
+
+.landscape .pane.rank-list,
+.landscape button,
+.landscape .pane.selectors select {
+
+  border: 3px solid #1A4559 !important;
+  -webkit-box-shadow: 0 0 12px 4px #1A4559;
+  background: #262626;
+
+
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #262626 0%, #000000 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #262626), color-stop(100%, #000000));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #262626 0%, #000000 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #262626 0%, #000000 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #262626 0%, #000000 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #262626 0%, #000000 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#262626', endColorstr='#000000', GradientType=0);
+  /* IE6-9 */
+  border: 3px solid black;
+  color: #6e6d6e;
+  -webkit-appearance: none;
+}
+
+
+
+
+
+
+/*  DOESN'T DO ANYTHING?  */
+.landscape .pane.selectors select {
+  text-indent: 10px;
+}
+
+
+
+
+
+/*  LEADERBOARD PIECES AND PLAYER'S PIECE  */
+.landscape .pane.rank-list li {
+  background: #262626;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #262626 0%, #000000 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #262626), color-stop(100%, #000000));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #262626 0%, #000000 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #262626 0%, #000000 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #262626 0%, #000000 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #262626 0%, #000000 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#262626', endColorstr='#000000', GradientType=0);
+  /* IE6-9 */
+  border: 3px solid black;
+  color: #6e6d6e;
+}
+
+
+
+
+.landscape ::-webkit-scrollbar-track {
+  background-color: #151515;
+}
+.landscape ::-webkit-scrollbar {
+  width: 8px;
+}
+.landscape ::-webkit-scrollbar-thumb {
+  background-color: #000;
+}
