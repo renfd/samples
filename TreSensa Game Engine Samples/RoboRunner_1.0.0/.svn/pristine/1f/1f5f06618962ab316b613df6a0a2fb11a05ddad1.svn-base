@@ -1,0 +1,79 @@
+Assets = function()
+{
+
+    this.locations =  [
+        
+        {id:'stationary_obstacle_1',    url:'stationaryObstacles/stationary_obstacle_1.png'},
+        {id:'stationary_obstacle_2',    url:'stationaryObstacles/stationary_obstacle_2.png'},
+       
+        {id:'moving_obstacle_A',        url:'movingObstacles/moving_obstacle_A.png'},
+        {id:'moving_obstacle_B',        url:'movingObstacles/moving_obstacle_B.png'},
+        
+        {id:'coin',                     url:'coin/coin.png'},
+        //{id:'coin_pickup',              url:'coin/coin_pickup'},
+        
+        {id:'player_running',           url:'player/player_running.png'},
+        {id:'player_flying',            url:'player/player_flying.png'},
+        {id:'player_falling',           url:'player/player_falling.png'},
+
+        {id:'startscreen_background',   url:'screens/startscreen_background.jpg'},
+        {id:'endscreen_background',     url:'screens/endscreen_background.jpg'},
+        {id:'gamescreen_background',    url:'screens/gamescreen_background.jpg'},
+        {id:'gamescreen_ground',        url:'screens/gamescreen_ground.png'},
+        {id:'gamescreen_middleground',  url:'screens/gamescreen_middleground.png'},
+           
+        {id:'play_button',              url:'buttons/play_button.png'},
+        {id:'playagain_button',         url:'buttons/playagain_button.png'},
+        
+        //UI
+        {id:'distance_ui',              url:'ui/distance_ui.png'},  
+        {id:'coin_ui',                  url:'ui/coin_ui.png'},
+
+        {id:'background_music',         url:'sounds/background_music.ogg',          backup_url:'sounds/background_music.mp3',       assetType:"audio"},
+        {id:'hitObstacle_sound',        url: 'sounds/hitObstacle_sound.ogg',        backup_url:'sounds/hitObstacle_sound.mp3',      assetType:"audio"},
+        {id:'hitCoin_sound',            url:'sounds/hitCoin_sound.ogg',             backup_url:'sounds/hitCoin_sound.mp3',          assetType:"audio"}, 
+      
+      ];
+
+
+    this.coinSettings = {image:"coin", radius:0.7};
+    //this.coinSettings = [];
+    //this.coinSettings ["notPickedUp"] = {image:"coin",          rows:1, columns:7, totalFrames:7,  fps:4};
+    //this.coinSettings ["pickedUp"]    = {image:"coinPickedUp",  rows:1, columns:7, totalFrames:7,  fps:15};
+
+    this.playerSettings = [];
+    this.playerSettings ["run"]       = {image:"player_running", rows:5, columns:4, totalFrames:20, fps:29};
+    this.playerSettings ["fly"]       = {image:"player_flying",  rows:5, columns:4, totalFrames:20, fps:16};
+    this.playerSettings ["fall"]      = {image:"player_falling", rows:5, columns:4, totalFrames:20, fps:16};
+
+    this.movingObstSettings = [];
+    this.movingObstSettings ["A"]     = {image:"moving_obstacle_A", speed:0, bobAmplitude:12, bobFrequency:2};
+    this.movingObstSettings ["B"]     = {image:"moving_obstacle_B", speed:0, bobAmplitude:10, bobFrequency:4};
+
+    this.stationaryObstSettings = [];
+    this.stationaryObstSettings [1]   = {image:"stationary_obstacle_1", yPos:400};
+    this.stationaryObstSettings [2]   = {image:"stationary_obstacle_2", yPos:000};
+
+    this.hudSettings = [];
+    this.hudSettings ["distanceHUD"]  = {icon:"distance_ui", height:20, font:"60px myFont", fontColor:"#003760"};
+    this.hudSettings ["coinHUD"]      = {icon:"coin_ui",     height:70, font:"60px myFont", fontColor:"#003760"};
+
+    this.parPlaneSettings = [];
+    this.parPlaneSettings ["background"]    = {image:"gamescreen_background",   height:450, speed:0.05};
+    this.parPlaneSettings ["middleground"]  = {image:"gamescreen_middleground", height:450, speed:0.20};
+    this.parPlaneSettings ["ground"]        = {image:"gamescreen_ground",       height:12,  speed:0.45};
+
+    this.soundSettings = [];
+    this.soundSettings ["backgroundMusic"]  = {id:"background_music",  loop:"1"};
+    this.soundSettings ["obstacleSound"]    = {id:"hitObstacle_sound", loop:"0"};
+    this.soundSettings ["coinSound"]        = {id:"hitCoin_sound",     loop:"0"};   
+
+    this.startScreenSettings = [];
+    this.startScreenSettings ["background"] = {image:"startscreen_background"};
+    this.startScreenSettings ["button"]     = {image:"play_button",  xPos: 0.72,     yPos: 0.8};
+
+    this.endScreenSettings = [];
+    this.endScreenSettings ["background"]   = {image:"endscreen_background"};
+    this.endScreenSettings ["button"]       = {image:"playagain_button",   xPos: 0.775,   yPos: 0.81};
+    this.endScreenSettings ["stats"]        = {font:"60px myFont", fontColor: "#0046E1",   xPos:0.93,   distanceHeight:0.25,   coinHeight:0.32,   scoreHeight:0.43};
+};

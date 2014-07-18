@@ -1,0 +1,239 @@
+
+
+
+Player = function() 
+{
+	// Call the superclass's constructor
+	Player.superclass.constructor.call(this);
+
+
+	// Movement settings
+	this.mGroundHeight    = 0;
+	this.mHorizontalSpeed = 0;
+	this.mVerticalSpeed   = 0;
+	this.mFallSpeed  = 0;
+	this.mBoostSpeed = 0;
+	this.mStopped    = false;
+
+
+	// Stats
+	this.mDistance = 0;
+	this.mCoins = 0;
+	
+
+	// Animation settings
+	this.mCurrentAnim = null;
+	this.mAnimArray   = [];
+
+
+	// Pointers to Game constructor and Game assets
+	this.gGame   	 = TGE.Game.GetInstance();
+	this.gAssets 	 = this.gGame.GetAssets();
+	
+	// Pointer to GameScreen
+	this.mGameScreen = null;
+	
+
+	// Adds update event listener which calls updatePlayer every frame
+	this.addEventListener("update", this.updatePlayer.bind(this));
+
+
+	this.useWorldPosition(true);
+
+
+	return this;
+}
+
+
+
+
+
+Player.prototype = 
+{
+
+	setupPlayer : function(params) 
+	{
+		this.mGameScreen = params.referenceToGameScreen;
+
+
+		this.createAnimations();
+
+
+		// start player out running
+		this.playAnimation("run");		
+
+
+		// Call the superclass's setup
+		Player.superclass.setup.call(this, params);
+		return this;
+	},
+
+
+	updatePlayer : function()
+	{
+		this.updateAnimation();
+
+		if (!this.mStopped)
+		{
+			this.updateVerticalPosition();
+			this.updateHorizontalPosition();
+		}
+	},
+
+
+
+
+
+
+	
+	createAnimations : function()
+	{
+		//creates player's spritesheets using the specs in Assets.js
+		for (var type in this.gAssets.playerSettings)
+		{
+			var settings = this.gAssets.playerSettings[type];
+
+			this.mAnimArray[type] = new TGE.SpriteSheetAnimation().setup({
+				looping: 	  true,
+				visible: 	  false,
+				image: 		  settings.image,
+				rows: 		  settings.rows,
+				columns: 	  settings.columns,
+				totalFrames:  settings.totalFrames,
+				fps: 		  settings.fps,
+			});
+
+			this.addChild(this.mAnimArray[type]);
+		}
+	},
+
+	
+	updateAnimation : function()
+	{
+		if (this.mStopped) this.playAnimation("fall");
+
+		else if (this.worldY == this.mGroundHeight) this.playAnimation("run");
+
+		else {
+			if (this.gGame.GetMouseDown()) this.playAnimation("fly");
+			else this.playAnimation("fall");
+	   	}
+	},
+
+
+	playAnimation : function(name) 
+	{
+	    // If it's already started playing, don't start it again
+	    if (this.mCurrentAnim == this.mAnimArray[name]) return;
+		
+		// Stop playing old animation if there is one
+		if (this.mCurrentAnim != null) {
+			this.mCurrentAnim.visible = false;
+			this.mCurrentAnim.gotoAndStop(0);
+		}
+		
+		// Start playing next animation
+		this.mCurrentAnim = this.mAnimArray[name];
+		this.mCurrentAnim.visible = true;
+		this.mCurrentAnim.gotoAndPlay(0);
+	},
+
+
+
+
+
+
+
+	updateVerticalPosition : function() 
+	{
+	    // Add boost
+	    if (this.gGame.GetMouseDown())  this.mVerticalSpeed = this.mBoostSpeed;  
+	    
+	    // Add gravity and cap it off at a certain point
+	    else {
+	    	this.mVerticalSpeed += this.mFallSpeed;
+	    	if (this.mVerticalSpeed < this.mFallSpeed * 5) this.mVerticalSpeed = this.mFallSpeed * 5;
+	    }						
+
+	    // move player vertically
+		this.worldY += this.mVerticalSpeed;
+
+	    // Constrain player between ground and cieling
+	    if 	(this.worldY < this.mGroundHeight)  this.worldY = this.mGroundHeight;
+	    else if (this.worldY < 0) 				this.worldY = 0;
+	},
+
+	updateHorizontalPosition : function() 
+	{
+		//move player horizontally and increment distance traveled
+		this.worldX += this.mHorizontalSpeed;
+	    this.increaseDistance();
+	},
+
+
+
+
+
+
+	hitCoin : function() {
+		//Play sound and increase coins
+		this.gGame.PlayAudio("coinSound");
+		this.increaseCoins();
+	},
+
+	hitObstacle : function() {
+
+		//Play sound and end game
+		this.gGame.PlayAudio("obstacleSound");
+
+		this.mStopped = true;
+
+		//End game
+		this.mGameScreen.endGame();
+	},
+
+
+
+
+
+
+	increaseDistance : function() {
+		this.mDistance += this.mHorizontalSpeed / 100;
+	},
+
+	increaseCoins : function() {
+		this.mCoins ++;
+	},
+
+	getDistance : function() {
+		return this.mDistance;
+	},
+
+	getCoins : function() {
+		return this.mCoins;
+	},
+
+
+
+
+
+	setSpeed : function(speed) {
+		this.mHorizontalSpeed = speed * this.stage.width;
+	},
+	
+	setFallSpeed : function(fallSpeed) {
+		this.mFallSpeed = -fallSpeed * this.stage.height;
+	},
+	
+	setBoostSpeed : function(boostSpeed) {
+		this.mBoostSpeed = boostSpeed * this.stage.height;
+	},
+
+	setGroundHeight : function(groundHeight) {
+		this.mGroundHeight = groundHeight;
+	},
+	
+	
+}
+
+extend(Player, TGE.DisplayObjectContainer); 
