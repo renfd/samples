@@ -36,6 +36,20 @@ This Phaser game that shows you how you can use the TGS Widget in your game.
 ### phaser-breakout-leaderboard
 *<p>services/leaderboard/phaser-breakout-leaderboard</p>*
 A Phaser game showing how you can implement TGS Leaderboard 
+
+* * *
+
+### custom-game-engine-tresensa
+*<p>distribution/custom-game-engine-tresensa</p>*
+A very simple game example created with a mock custom game engine with the Tresensa platform integrated.
+The game scales to the width of the screen.
+
+* * *
+
+### custom-game-engine-tgswidget
+*<p>services/tgs-widget/custom-game-engine-tgswidget</p>*
+A very simple game example created with a mock custom game engine with the Tresensa platform and the TGS Widget integrated. The game scales to the width of the screen and the TGS Widget scales with the game as well.This is a very useful example to see if you are rolling your own custom game engine and would like to use the TGS Widget in your game.
+
 * * *
 
 ### starter_template
