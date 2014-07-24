@@ -1,0 +1,29 @@
+body
+{
+	margin:0;
+	background:#000;
+	overflow: hidden;
+	text-align:center;
+	
+}
+#game
+{
+	/* Center the game div on the screen */
+	margin:0 auto;
+
+	/* 
+		IMPORTANT: Setting the game div 
+		inline-block will make it the same size as our canvas, 
+		which is what we want if we are using the TGS Widget.
+		
+		You need to set the position of the game div to relative(or absolute).
+		otherwise the TGS Widget will not be able to position itself correctly
+	*/
+	display:inline-block;
+	position:relative; 
+}
+
+/* get rid of tiny 4px gap on the bottom */
+canvas { display:block; }
+
+
